@@ -1,0 +1,21 @@
+class Relational
+{
+  public static void main(String[] args)
+  {
+    int a=10;
+	int b=20;
+	boolean equal = a==b;
+	boolean notequal = a!=b;
+	boolean greater = a>b;
+	boolean lesser = a<b;
+	boolean greaterequal = a>=b;
+	boolean lessequal = a<=b;
+	
+	System.out.println("the given condition is"+equal);
+	System.out.println("the given condition is"+notequal);
+	System.out.println("the given condition is"+greater);
+	System.out.println("the given condition is"+lesser);
+	System.out.println("the given condition is"+greaterequal);
+    System.out.println("the given condition is"+lessequal);	
+    }
+}
