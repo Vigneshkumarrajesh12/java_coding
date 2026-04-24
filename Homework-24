@@ -1,0 +1,89 @@
+1.
+import java.util.Scanner;
+
+public class SecondMaximum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input size
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        // Check minimum size
+        if (n < 2) {
+            System.out.println("Array must have at least 2 elements");
+            return;
+        }
+
+        int[] arr = new int[n];
+
+        // Input elements
+        System.out.println("Enter elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        // Find max and second max
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > max) {
+                secondMax = max;
+                max = arr[i];
+            } else if (arr[i] > secondMax && arr[i] != max) {
+                secondMax = arr[i];
+            }
+        }
+
+        // Output result
+        if (secondMax == Integer.MIN_VALUE) {
+            System.out.println("No second maximum (all elements may be equal)");
+        } else {
+            System.out.println("Second Maximum = " + secondMax);
+        }
+
+        sc.close();
+    }
+}
+2.
+import java.util.Scanner;
+
+public class ShoppingBillingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input number of items
+        System.out.print("Enter number of items: ");
+        int n = sc.nextInt();
+
+        double[] prices = new double[n];
+        double total = 0;
+
+        // Input item prices
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter price of item " + (i + 1) + ": ");
+            prices[i] = sc.nextDouble();
+            total += prices[i];
+        }
+
+        double discount = 0;
+
+        // Apply discount
+        if (total > 5000) {
+            discount = total * 0.20;
+        } else if (total > 2000) {
+            discount = total * 0.10;
+        }
+
+        double finalAmount = total - discount;
+
+        // Display bill
+        System.out.println("\n------ BILL DETAILS ------");
+        System.out.println("Total Amount : " + total);
+        System.out.println("Discount     : " + discount);
+        System.out.println("Final Amount : " + finalAmount);
+
+        sc.close();
+    }
+}
