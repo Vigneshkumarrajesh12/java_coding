@@ -1,0 +1,103 @@
+1.
+class Employee {
+    String name;
+    double salary;
+    Employee(String name, double salary)
+{
+        this.name = name;
+        this.salary = salary;
+    }
+    void displayInfo() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Salary: Rs. " + salary);
+    }
+}
+class Manager extends Employee
+  {
+    String department;
+    Manager(String name, double salary, String department) 
+    {
+        super(name, salary);
+        this.department = department;
+    }
+    @Override
+    void displayInfo() 
+{
+        super.displayInfo();
+        System.out.println("Department: " + department);
+    }
+}
+public class EmployeeManagement 
+{
+    public static void main(String[] args) {
+        System.out.println("Employee Management System");
+        System.out.println("-------------------------");
+        Employee emp = new Employee("Alice", 50000);
+        Manager mgr = new Manager("Bob", 80000, "IT");
+        // Display employee details
+        emp.displayInfo();
+        System.out.println();
+        mgr.displayInfo();
+    }
+}
+2.
+class Vehicle 
+{
+    String brand;
+    int year;
+    Vehicle(String brand, int year)
+{
+        this.brand = brand;
+        this.year = year;
+    }
+    void displayInfo()
+{
+        System.out.println("Brand: " + brand);
+        System.out.println("Year: " + year);
+    }
+}
+class Car extends Vehicle
+  {
+    int seats;
+    Car(String brand, int year, int seats)
+      {
+        super(brand, year); 
+        this.seats = seats;
+    }
+    @Override
+    void displayInfo()
+{
+        super.displayInfo();
+        System.out.println("Seats: " + seats);
+    }
+}
+class Motorcycle extends Vehicle
+  {
+    String type;
+    Motorcycle(String brand, int year, String type)
+      {
+        super(brand, year);
+        this.type = type;
+    }
+    @Override
+    void displayInfo()
+{
+        super.displayInfo();
+        System.out.println("Type: " + type);
+    }
+}
+public class VehicleManagement
+{
+    public static void main(String[] args)
+{
+        System.out.println("Vehicle Management System");
+        System.out.println("-------------------------");
+        Car car = new Car("Toyota", 2022, 5);
+        Motorcycle bike = new Motorcycle("Yamaha", 2020, "Sports");
+        System.out.println("Car:");
+        car.displayInfo();
+        System.out.println();
+        System.out.println("Bike:");
+        bike.displayInfo();
+    }
+}
